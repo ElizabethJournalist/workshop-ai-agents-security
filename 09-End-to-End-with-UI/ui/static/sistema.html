@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Componentes · AgentCore</title>
+  <link rel="stylesheet" href="/static/css/reset.css">
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="stylesheet" href="/static/css/components.css">
+  <link rel="stylesheet" href="/static/css/layout.css">
+  <link rel="stylesheet" href="/static/css/pages/sistema.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar"></aside>
+    <header class="topbar"></header>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Componentes</h1>
+          <p class="page-description">
+            Estado ao vivo dos componentes AWS que sustentam a demo: Cognito,
+            Gateway, Policy Engine, Guardrail e os cinco Runtimes especialistas.
+          </p>
+        </div>
+        <div class="page-header-actions">
+          <button class="btn btn-secondary btn-sm" id="refresh-btn">Atualizar</button>
+        </div>
+      </div>
+
+      <div class="metrics-grid" id="summary-grid">
+        <!-- filled by sistema.js -->
+      </div>
+
+      <div class="sistema-grid mt-4">
+        <div class="card" id="card-cognito"></div>
+        <div class="card" id="card-gateway"></div>
+        <div class="card" id="card-policy"></div>
+        <div class="card" id="card-guardrail"></div>
+      </div>
+
+      <div class="card mt-4">
+        <div class="card-header">
+          <div class="card-title">Runtimes (especialistas)</div>
+          <span class="muted text-xs" id="runtimes-count">—</span>
+        </div>
+        <div class="card-body" id="runtimes-body">
+          <div class="governance-empty">Carregando…</div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/static/js/pages/sistema.js"></script>
+</body>
+</html>

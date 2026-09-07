@@ -1,0 +1,30 @@
+# AWS SDK
+boto3>=1.34.0
+botocore>=1.34.0
+
+# AgentCore
+bedrock-agentcore>=0.2.0
+bedrock-agentcore-starter-toolkit>=0.1.0
+
+# Strands Agents (framework do agente)
+strands-agents>=0.5.0
+
+# MCP client (usado pelos specialists para falar com o Gateway)
+mcp>=1.0.0
+
+# Jupyter
+jupyter>=1.0.0
+ipykernel>=6.0.0
+notebook>=7.0.0
+
+# UI do lab 09 (Flask + SSE)
+Flask>=3.0.0
+
+# Helpers
+requests>=2.31.0
+python-dotenv>=1.0.0
+PyJWT>=2.8.0          # decodificar JWTs nos labs (sem validar — só visualizar claims)
+
+# Observability
+aws-opentelemetry-distro>=0.5.0
+opentelemetry-instrumentation>=0.45b0

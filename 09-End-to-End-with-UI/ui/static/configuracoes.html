@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Configurações · AgentCore</title>
+  <link rel="stylesheet" href="/static/css/reset.css">
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="stylesheet" href="/static/css/components.css">
+  <link rel="stylesheet" href="/static/css/layout.css">
+  <link rel="stylesheet" href="/static/css/pages/configuracoes.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar"></aside>
+    <header class="topbar"></header>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Configurações</h1>
+          <p class="page-description">
+            Informações da sua sessão, configuração pública do portal e
+            preferências de interface.
+          </p>
+        </div>
+      </div>
+
+      <div class="config-grid">
+        <div class="card">
+          <div class="card-header"><div class="card-title">Sessão atual</div></div>
+          <div class="card-body" id="session-body">carregando…</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><div class="card-title">Portal</div></div>
+          <div class="card-body" id="portal-body">carregando…</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><div class="card-title">Preferências</div></div>
+          <div class="card-body">
+            <label class="pref-row">
+              <span>
+                <strong>Alto contraste</strong>
+                <small class="muted">Aumenta o contraste das cores para leitura.</small>
+              </span>
+              <input type="checkbox" id="pref-contrast">
+            </label>
+            <label class="pref-row">
+              <span>
+                <strong>Logar payloads no console</strong>
+                <small class="muted">Mostra os dicts de governança no console do navegador.</small>
+              </span>
+              <input type="checkbox" id="pref-debug">
+            </label>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><div class="card-title">JWT Access Token (claims)</div></div>
+          <div class="card-body" id="claims-body">carregando…</div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/static/js/pages/configuracoes.js"></script>
+</body>
+</html>

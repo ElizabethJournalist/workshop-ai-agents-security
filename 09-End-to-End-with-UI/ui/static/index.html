@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar · Governança AgentCore</title>
+  <link rel="stylesheet" href="/static/css/reset.css">
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="stylesheet" href="/static/css/components.css">
+  <link rel="stylesheet" href="/static/css/layout.css">
+</head>
+<body>
+  <main class="auth-shell">
+    <section class="auth-card">
+      <div class="auth-brand">
+        <div class="auth-brand-mark">AG</div>
+        <div class="auth-brand-name">Governança AgentCore</div>
+        <div class="auth-brand-tagline">
+          Demo multiagente com autorização Cedar + Guardrail ponta a ponta
+        </div>
+      </div>
+
+      <form class="auth-form" id="login-form" novalidate>
+        <div class="field">
+          <label class="field-label" for="email">E-mail</label>
+          <input
+            class="input"
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="username"
+            placeholder="ana.operadora@demo.internal"
+            required
+          >
+        </div>
+        <div class="field">
+          <label class="field-label" for="password">Senha</label>
+          <input
+            class="input"
+            type="password"
+            id="password"
+            name="password"
+            autocomplete="current-password"
+            placeholder="••••••••"
+            required
+          >
+        </div>
+        <div id="login-error" class="text-sm" style="color: var(--brand-danger); display: none;"></div>
+        <button class="btn btn-primary btn-block btn-lg" type="submit" id="login-submit">
+          Entrar
+        </button>
+      </form>
+
+      <div class="auth-demo">
+        <strong>Usuários de demonstração</strong><br>
+        <code>ana.operadora</code> · grupo <em>operators</em><br>
+        <code>carlos.gestor</code> · grupos <em>managers, governance</em><br>
+        Senha: <code><defina em config.env></code>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/static/js/pages/login.js"></script>
+</body>
+</html>

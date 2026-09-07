@@ -1,0 +1,110 @@
+/* sistema.css — dashboard dos componentes AWS. */
+
+.page-header-actions { display: flex; gap: var(--space-2); }
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3);
+}
+
+.sistema-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--space-4);
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: var(--space-3);
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: var(--fs-sm);
+  align-items: baseline;
+}
+.kv:last-child { border-bottom: 0; }
+.kv-k { color: var(--text-muted); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: var(--tracking-wide); }
+.kv-v { color: var(--text); overflow-wrap: anywhere; }
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.policy-list {
+  margin-top: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.policy-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 8px;
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+}
+.policy-link {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 999px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.policy-link:hover {
+  color: var(--brand);
+  border-color: var(--brand);
+}
+
+.rt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-3);
+}
+.rt-card {
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-alt);
+}
+.rt-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+.rt-head strong { flex: 1; font-size: var(--fs-sm); }
+.rt-body .kv { grid-template-columns: 50px 1fr; }
+
+.error-line {
+  margin-top: var(--space-2);
+  padding: 6px 10px;
+  background: var(--state-danger-bg);
+  color: var(--state-danger-fg);
+  border-left: 3px solid var(--state-danger-fg);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  max-width: 260px;
+  vertical-align: bottom;
+}
+
+.text-permit { color: var(--state-success-fg); font-weight: var(--fw-semibold); }
+.text-deny   { color: var(--state-danger-fg);  font-weight: var(--fw-semibold); }

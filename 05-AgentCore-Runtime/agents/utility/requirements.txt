@@ -1,0 +1,7 @@
+strands-agents[otel]
+bedrock-agentcore
+mcp
+boto3
+PyJWT
+requests
+aws-opentelemetry-distro>=0.10.0

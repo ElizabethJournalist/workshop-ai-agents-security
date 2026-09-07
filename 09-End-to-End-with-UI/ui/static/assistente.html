@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assistente · Governança AgentCore</title>
+  <link rel="stylesheet" href="/static/css/reset.css">
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="stylesheet" href="/static/css/components.css">
+  <link rel="stylesheet" href="/static/css/layout.css">
+  <link rel="stylesheet" href="/static/css/pages/assistente.css">
+</head>
+<body class="page-assistente">
+  <div class="app">
+    <aside class="sidebar"></aside>
+    <header class="topbar"></header>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Assistente</h1>
+          <p class="page-description">
+            Converse com o assistente unificado. A roteamento entre especialistas
+            é automático; as políticas Cedar e o Guardrail aplicam antes de cada
+            tool chamada.
+          </p>
+        </div>
+      </div>
+
+      <div class="agent-selector" id="agent-selector">
+        <!-- populated by assistente.js -->
+      </div>
+
+      <div class="assistente-grid">
+        <!-- Conversation -->
+        <section>
+          <div class="conversation">
+            <div class="conversation-log" id="log">
+              <div class="turn-empty" id="empty-state">
+                <div class="turn-empty-title">Envie sua primeira pergunta</div>
+                <div class="turn-empty-hint">
+                  Exemplos: "qual o status da rede no setor norte?", "crie uma ordem
+                  de manutenção urgente para o TR-042", "gere o relatório Q1-2024".
+                </div>
+              </div>
+            </div>
+
+            <div class="composer-suggestions" id="suggestions">
+              <!-- populated per agent -->
+            </div>
+
+            <form class="composer" id="composer" autocomplete="off">
+              <textarea
+                class="input composer-input"
+                id="composer-input"
+                placeholder="Digite sua pergunta…"
+                rows="1"
+              ></textarea>
+              <button class="btn btn-primary" type="submit" id="send-btn">Enviar</button>
+            </form>
+          </div>
+        </section>
+
+        <!-- Governance panel -->
+        <aside>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Decisões da sessão</div>
+            </div>
+            <div class="card-body" id="governance-panel">
+              <div class="governance-empty">Envie uma mensagem para ver as decisões de governança.</div>
+            </div>
+          </div>
+
+          <div class="card mt-4">
+            <div class="card-header">
+              <div class="card-title">Camadas de segurança</div>
+            </div>
+            <div class="card-body">
+              <div class="policy-summary">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="status-dot status-dot-success"></span>
+                  <strong>Cognito JWT</strong>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="status-dot status-dot-success"></span>
+                  <strong>MCP Gateway</strong> · Cedar policies
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="status-dot status-dot-success"></span>
+                  <strong>Bedrock Guardrail</strong> · prompt attack, PII
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-dot status-dot-success"></span>
+                  <strong>Runtime authorizer</strong> · JWT end-to-end
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/static/js/pages/assistente.js"></script>
+</body>
+</html>
